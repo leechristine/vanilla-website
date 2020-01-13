@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Christine Lee - Portfolio</title>
+    <link rel='stylesheet' href='styles.css'/>
+    <link rel='stylesheet' href='navigation.css'/>
+    <link rel='stylesheet' href='about-me.css'/>
+    <link rel='stylesheet' href='index.css'/>
+
+    <script type='text/javascript'>
+    // When the user clicks on <div>, open the popup
+      function enable_visibility(id) {
+        var popup = document.getElementById(id);
+          popup.style.visibility = 'visible';
+      }
+
+      function disable_visibility(id) {
+        var popup = document.getElementById(id);
+          popup.style.visibility = 'hidden';
+      }
+      function enable_display(id) {
+        var popup = document.getElementById(id);
+          popup.style.display = 'flex';
+      }
+
+      function disable_display(id) {
+        var popup = document.getElementById(id);
+          popup.style.display = 'none';
+      }
+
+      function toggle_display_size(id) {
+        var popup = document.getElementById(id);
+          if (popup.style.width == '50vw') {
+              popup.style.margin = '0 0';
+              popup.style.width = '100%';
+              popup.style.height = '100%';
+          }
+          else {
+              popup.style.margin = '7vh 25vw';
+              popup.style.width = '50vw';
+              popup.style.height = 'auto';
+          }
+        }
+
+        function revert_to_original(id) {
+          var popup = document.getElementById(id);
+            if (popup.style.width == '100%') {
+                popup.style.margin = '7vh 25vw';
+                popup.style.width = '50vw';
+                popup.style.height = 'auto';
+            }
+            popup.style.visibility = 'hidden';
+        }
+    </script>
+  </head>
+  <body>
+    <!-- NAVIGATION PANEL HERE -->
+    <div class='navigation-container'>
+      <ul class='navigation'>
+        <li class='home-tab'><a href='index.html'>CHRISTINE LEE</a></li>
+        <li class='secondary-tab first-of-type'>
+          <div class='button popup-open'>
+            <a href='javascript:void(0)' onclick="enable_visibility('profile-popup');">ABOUT ME</a>
+          </div></li>
+        <li class='secondary-tab current-tab'><a href='index.html'>PORTFOLIO</a></li>
+        <li class='secondary-tab'><a href='resume.html'>RESUME</a></li>
+      </ul>
+    </div>
+    <!-- ABOUT ME POPUP HERE -->
+    <div class='popup-container' id='profile-popup'>
+      <div class='toolbar-container'>
+        <div class='button toolbar close'>
+          <a href='javascript:void(0)' onclick="revert_to_original('profile-popup');">x</a>
+        </div>
+        <div class='button toolbar minimize'>
+          <a href='javascript:void(0)' onclick="disable_visibility('profile-popup');
+                                                enable_visibility('profile-minimized');
+                                                enable_display('profile-close');">-</a>
+        </div>
+        <div class='button toolbar expand'>
+          <a href='javascript:void(0)' onclick="toggle_display_size('profile-popup');">e</a>
+        </div>
+      </div>
+      <div class='popup-body'>
+        <div class='popup-grid first-of-item'>
+          <div class='popup-grid-item first-of-item'>
+            hi
+          </div>
+          <div class='popup-grid-item'>
+            hi
+          </div>
+          <div class='popup-grid-item'>
+            hi
+          </div>
+        </div>
+        <div class='popup-grid'>
+          <div class='popup-grid-item first-of-item'>
+            hi
+          </div>
+          <div class='popup-grid-item'>
+            hi
+          </div>
+          <div class='popup-grid-item'>
+            hi
+          </div>
+        </div>
+      </div>
+    </div>
+            <!-- ABOUT ME POPUP (MINIMIZED) HERE -->
+    <div class='dock-container' id='profile-minimized'>
+      <a class='dock-screen' href='javascript:void(0)' onclick="disable_visibility('profile-minimized');
+                                                                disable_display('profile-close');
+                                                                enable_visibility('profile-popup');"></a>
+      <a class='dock-close' id='profile-close'
+         href='javascript:void(0)' onclick="disable_visibility('profile-minimized');
+                                            disable_display('profile-close');
+                                            revert_to_original('profile-popup');">x</a>
+      <div class='dock-item'>
+        <div class='mock-toolbar'></div>
+        <p>ABOUT </br> ME</p>
+      </div>
+    </div>
+    <!-- PAGE HEADER HERE -->
+    <div class='header-container'>
+      <header class='header'>
+        <h1>PORTFOLIO</h1>
+        <p>&lt;header description goes here&gt;</p>
+      </header>
+    </div>
+    <!-- PROJECT PANEL HERE -->
+    <div class='photo-grid-container'>
+      <div class='photo-grid'>
+        <div class= 'photo-grid-item'>
+          <a href='#'><img src='#'/></a>
+          <h2>PROJECT NAME</h2>
+          <p>description goes here</p>
+          <div class='button view-project'><a href='#'>VIEW PROJECT</a></div>
+        </div>
+      </div>
+      <div class='photo-grid'>
+        <div class= 'photo-grid-item'>
+          <a href='#'><img src='#'/></a>
+          <h2>PROJECT NAME</h2>
+          <p>description goes here</p>
+          <div class='button view-project'><a href='#'>VIEW PROJECT</a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

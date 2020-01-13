@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
+
+.resume-container {
+  display: flex;
+  justify-content: center;
+}
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 900px;
+  width: 650px;
+  margin-top: 25px;
+  padding: 30px 50px;
+  background-color: #F5F5F5;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: center;
+  height: 750px;
+}
+
+.download {
+  padding: 10px 12px;
+  border-radius: 2px;
+  border: none;
+  background-color: #CACACA;
+}
+
+.download > a {
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.download > a:hover {
+  color: #4B4B4B;
+}
+.download > a:active {
+  color: #4B4B4B;
+}
